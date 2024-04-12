@@ -15,4 +15,15 @@ export class User {
     })
     return response;
   }
+  async signIn(data) {
+    const url = `${this.base_api}/${ENV.API_ROUTES.LOGIN.replace(':id', data.email)}`;
+    const response = await fetch(url, {
+        method: "GET",
+        headers: { "Content-Type": "application/json" },
+    });
+    return response;
 }
+
+}
+
+
