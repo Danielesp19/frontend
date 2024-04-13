@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import { User } from "../../request/user";
+import { User } from "../../../request/user";
 import TextField from '@mui/material/TextField';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
+import "./Login.css"
 import {
     Button,
     IconButton, 
@@ -10,12 +11,16 @@ import {
     OutlinedInput,
 } from '@mui/material';
 
+import { useNavigate } from 'react-router-dom';
+
+
 const userController =  new User();
 
 export const Login = () => {
     const [showPassword, setShowPassword] = React.useState(false);
     const [email, setEmail]= useState("");
     const [password, setPassword]= useState("");
+    const navigate = useNavigate();
 
     const handleClickShowPassword = () => setShowPassword((show) => !show);
 
@@ -28,11 +33,15 @@ export const Login = () => {
             email,
             password,
         }
-        const response = await userController.signIn(data); // Asegúrate de tener un método signIn en tu clase User
+        const response = await userController.signIn(data); 
         console.log(response);
-        response.status === 200
-            ? alert("Usuario autenticado")
-            : alert("Error al autenticar el usuario");
+        if (response.status === 200) {
+            alert("autentitcacion exitosa");
+            navigate('/dashboard'); 
+
+        } else {
+            alert("Error en el usuario o contraseña ");
+        }
     };
 
     return (

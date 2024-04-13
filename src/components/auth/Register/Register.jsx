@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react'
-import { User } from "../../request/user"
+import { User } from "../../../request/user"
 import TextField from '@mui/material/TextField';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
+import "./Register.css"
 import {
     Button,
     IconButton, 

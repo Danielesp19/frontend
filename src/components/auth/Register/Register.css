@@ -1,0 +1,28 @@
+.card-register {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  padding: 20px;
+  margin: 0 auto;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.card-register .MuiTextField-root,
+.card-register .MuiOutlinedInput-root,
+.card-register .MuiButton-root,
+.card-register .MuiFormControl-root {
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.row-style {
+  display: flex;
+  justify-content: space-between;
+}
+
+.row-style .MuiOutlinedInput-root {
+  width: 48%; 
+}

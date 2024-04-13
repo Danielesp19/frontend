@@ -1,7 +1,7 @@
 import {BrowserRouter,Routes,route} from 'react-router-dom'
 import './App.css';
-import {Register} from './components/auth/Register.jsx';
-import {Login} from './components/auth/Login.jsx';
+import {Register} from './components/auth/Register/Register.jsx';
+import {Login} from './components/auth/login/Login.jsx';
 
 function App() {
   return (
